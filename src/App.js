@@ -10,7 +10,8 @@ import "./App.css";
 const useStyles = makeStyles(theme => ({
     part: {
         height: "100vh",
-        overflow: "scroll"
+        overflow: "scroll",
+        padding: "0 !important"
     }
 }));
 

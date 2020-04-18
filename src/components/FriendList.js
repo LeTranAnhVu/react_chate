@@ -1,7 +1,9 @@
 import React from "react";
 import FriendListItem from "./FriendListItem";
 import {Divider, Typography, Card} from "@material-ui/core";
+import WidgetHeader from "./Common/WidgetHeader";
 import {makeStyles} from "@material-ui/core/styles";
+import AppBox from "./Common/AppBox";
 
 const listFriends = [
     {
@@ -43,21 +45,7 @@ const listFriends = [
 ];
 
 const useStyles = makeStyles(theme => ({
-    root: {
-        padding: theme.spacing(3)
-    },
-    header: {
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        fontWeight: theme.typography.fontWeightLight,
-        fontSize: "14px",
-
-    },
-    title: {
-        fontSize: "14px",
-        fontWeight: theme.typography.fontWeightLight
-    },
+    root: {},
     list: {
         marginTop: theme.spacing(2),
     }
@@ -75,19 +63,15 @@ const FriendList = () => {
 
     };
     return (
-        <Card className={classes.root}>
-            <div className={classes.header}>
-                <Typography className={classes.title} variant="h6">
-                    FRIENDS
-                </Typography>
+        <AppBox>
+            <WidgetHeader titleName={"FRIENDS"}>
                 <p>75</p>
-            </div>
+            </WidgetHeader>
             <Divider/>
             <div className={classes.list}>
                 {buildList()}
             </div>
-
-        </Card>
+        </AppBox>
     );
 };
 

@@ -1,7 +1,9 @@
 import React from "react";
 import ChannelListItem from "./ChannelListItem";
-import {Divider, Typography, Card} from "@material-ui/core";
+import {Divider, Card} from "@material-ui/core";
 import {makeStyles} from "@material-ui/core/styles";
+import WidgetHeader from "./Common/WidgetHeader";
+import AppBox from "./Common/AppBox";
 
 const listChannel = [
     {
@@ -38,19 +40,6 @@ const listChannel = [
 
 const useStyles = makeStyles(theme => ({
     root: {
-        padding: theme.spacing(3)
-    },
-    header: {
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        fontWeight: theme.typography.fontWeightLight,
-        fontSize: "14px",
-
-    },
-    title: {
-        fontSize: "14px",
-        fontWeight: theme.typography.fontWeightLight
     },
     list: {
         marginTop: theme.spacing(2),
@@ -69,19 +58,16 @@ const ChannelList = () => {
 
     };
     return (
-        <Card className={classes.root}>
-            <div className={classes.header}>
-                <Typography className={classes.title} variant="h6">
-                    CHANNELS
-                </Typography>
-                <p>75</p>
-            </div>
+        <AppBox mb={2}>
+            <WidgetHeader titleName={"CHANNELS"}>
+                <p>3</p>
+            </WidgetHeader>
             <Divider/>
             <div className={classes.list}>
                 {buildList()}
             </div>
 
-        </Card>
+        </AppBox>
     );
 };
 

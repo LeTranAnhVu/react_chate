@@ -1,22 +1,21 @@
 import React from "react";
 import FriendList from "./FriendList";
 import {makeStyles} from "@material-ui/core/styles";
-import {Divider} from "@material-ui/core";
 import ChannelList from "./ChannelList";
+import UserSettingBox from "./UserSettingBox";
 
 const useStyles = makeStyles(theme => ({
     root: {
+        minHeight: "100vh",
         padding: theme.spacing(2),
-        "& > *": {
-            marginBottom: theme.spacing(3)
-        }
-
+        background: theme.palette.action.hover,
     }
 }));
 const LeftSide = () => {
     const classes = useStyles();
     return (
         <div className={classes.root}>
+            <UserSettingBox/>
             <ChannelList/>
             <FriendList/>
         </div>

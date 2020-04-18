@@ -5,9 +5,12 @@ export default makeStyles((theme) => ({
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
-        marginBottom: theme.spacing(1),
         padding: "2px 15px",
-        "&:hover" : {
+        cursor: "pointer",
+        userSelect: "none",
+    },
+    boxHover: {
+        "&:hover": {
             background: "#e6e6e64f",
             borderRadius: "25px"
         }
@@ -36,13 +39,18 @@ export default makeStyles((theme) => ({
     avatar: {
         marginLeft: theme.spacing(1)
     },
-    small: {
-        width: theme.spacing(3),
-        height: theme.spacing(3)
-    },
-    medium: {
+    avatarSmall: {
         width: theme.spacing(4),
         height: theme.spacing(4)
+    },
+    avatarMedium: {
+        width: theme.spacing(6),
+        height: theme.spacing(6)
+    },
+
+    avatarLarge: {
+        width: theme.spacing(15),
+        height: theme.spacing(15)
     },
     notification: {
         marginRight: theme.spacing(0.5)
