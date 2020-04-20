@@ -1,35 +1,27 @@
 import React from "react";
-import {Grid} from "@material-ui/core";
-import {makeStyles} from "@material-ui/core/styles";
-import LeftSide from "./components/LeftSide";
-import RightSide from "./components/RightSide";
-import Main from "./components/Main";
+import {Router, Route, Redirect, Switch} from "react-router-dom";
+
 import "./App.css";
+import ChatRoom from "./Pages/ChatRoom";
+import LoginPage from "./Pages/LoginPage";
+import RegisterPage from "./Pages/RegisterPage";
+import history from "./Helpers/history";
 
-
-const useStyles = makeStyles(theme => ({
-    part: {
-        height: "100vh",
-        overflow: "scroll",
-        padding: "0 !important"
-    }
-}));
 
 function App() {
-    const classes = useStyles();
     return (
-        <Grid container spacing={1}>
-            <Grid className={classes.part} item xs={3}>
-                <LeftSide/>
-            </Grid>
-            <Grid className={classes.part} item xs={6}>
-                <Main/>
-            </Grid>
-            <Grid className={classes.part} item xs={3}>
-                <RightSide/>
-            </Grid>
+        <div>
+            <Router history={history}>
+                <Switch>
+                    <Route path="/login" component={LoginPage}/>
+                    <Route path="/register" component={RegisterPage}/>
+                    <Route path="/chat_room" component={ChatRoom}/>
+                    <Redirect exact from="/" to="/chat_room"/>
+                </Switch>
 
-        </Grid>
+            </Router>
+
+        </div>
     );
 }
 

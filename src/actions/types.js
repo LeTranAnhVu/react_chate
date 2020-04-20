@@ -1,0 +1,6 @@
+export const CLEAR_ALL = "CLEAR_ALL";
+
+export const UPDATE_USER = "UPDATE_USER";
+export const DELETE_USER = "DELETE_USER";
+
+
